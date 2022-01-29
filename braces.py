@@ -1,13 +1,10 @@
-from collections import defaultdict
+
 def braces(A):
-   lc=-1
+   
    sign={'+','-','/'}
    dic={}
    for i in range(len(A)):
-      #print(i)   
-      if A[i]==')':
-         
-            
+      if A[i]==')':   
          x=1
          j=i-1
          s=True
@@ -18,15 +15,15 @@ def braces(A):
                x-=1
             elif A[j]==')':
                j=dic[j]
-            print(x,j)
+           
             if x==0:
                if s:
-                  return False
+                  return 1
                dic[i]=j
                break
             j-=1
-   print(dic)
-   return True
+   
+   return 0
 
 s=input()
 print(braces(s))
